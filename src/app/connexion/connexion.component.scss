@@ -1,0 +1,64 @@
+
+mat-card.connexion-card {
+	margin: auto;
+	width: 400px;
+	margin-top: 10%;
+
+	mat-card-title {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		font-size: 18px;
+
+		mat-icon {
+			margin-right: 16px;
+		}
+	}
+
+	mat-card-content {
+		form {
+			margin-top: 16px;
+			.form-row {
+				display: flex;
+				flex-direction: row;
+				width: 100%;
+
+				.form-input {
+					margin: 0 8px;
+					flex-grow: 1;
+
+					mat-form-field {
+						width: 100%;
+					}
+				}
+
+				&.ftp-address {
+					.form-input:last-child {
+						flex-grow: 0;
+						mat-form-field {
+							width: 60px;
+
+							input::-webkit-outer-spin-button,
+							input::-webkit-inner-spin-button {
+								-webkit-appearance: none;
+								margin: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	mat-card-actions {
+		display: flex;
+		flex-direction: row;
+		margin-right: 0;
+		margin-bottom: 0;
+		a {
+			margin-left: auto;
+		}
+	}
+}
+
+
