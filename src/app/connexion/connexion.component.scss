@@ -4,6 +4,10 @@ mat-card.connexion-card {
 	width: 400px;
 	margin-top: 10%;
 
+	@media(max-width: 450px) {
+		width: 100%;
+	}
+
 	mat-card-title {
 		display: flex;
 		flex-direction: row;

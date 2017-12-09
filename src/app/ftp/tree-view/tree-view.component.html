@@ -1,0 +1,17 @@
+<app-tree-view-toolbar [disableUpFolder]="!hasParentFolder" (onParentFolder)="goToParentFolder()" ></app-tree-view-toolbar>
+<mat-list>
+	<h3 mat-subheader>{{ content.name }}</h3>
+	<mat-list-item *ngFor="let folder of currentFolder.subFolders" class="folder" (click)="openFolder(folder)" >
+		<mat-icon mat-list-icon class="file-type-icon">folder</mat-icon>
+		<h4 mat-line>{{ folder.name }}</h4>
+		<p mat-line>{{ folder.creationDate | date: 'dd MMM yyyy' }}</p>
+	</mat-list-item>
+	<mat-list-item *ngFor="let file of currentFolder.subFiles" class="file">
+		<mat-icon mat-list-icon class="file-type-icon">insert_drive_file</mat-icon>
+		<h4 mat-line>{{ file.name }}.{{ file.extension }}</h4>
+		<p mat-line> {{ file.creationDate | date: 'dd MMM yyyy' }} </p>
+	</mat-list-item>
+	<mat-list-item *ngIf="currentFolder.subFolders.length + currentFolder.subFiles.length === 0" class="empty-folder">
+		<p mat-line>Empty directory</p>
+	</mat-list-item>
+</mat-list>

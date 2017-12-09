@@ -1,1 +1,17 @@
-<h1>FTP</h1>
+<div class="container">
+	<div class="row">
+		<mat-card class="ftp-content" >
+			<mat-card-header>
+				<mat-card-title>
+					{{ ftp.name }}
+				</mat-card-title>
+				<mat-card-subtitle>
+					{{ ftp.address }}
+				</mat-card-subtitle>
+			</mat-card-header>
+			<mat-card-content>
+				<app-tree-view [content]="ftp.content"></app-tree-view>
+			</mat-card-content>
+		</mat-card>
+	</div>
+</div>

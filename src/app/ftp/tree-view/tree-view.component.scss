@@ -1,0 +1,29 @@
+
+@import "../../scss/colors";
+
+.folder, .file {
+	p {
+		color: #b7b7b7;
+	}
+}
+
+.folder {
+	cursor: pointer;
+	&:hover {
+		background: #616161;
+	}
+	.file-type-icon {
+		color: $accent;
+	}
+}
+
+.file {
+	.file-type-icon {
+		color: $primary;
+	}
+}
+
+.empty-folder {
+	text-align: center;
+	font-style: italic;
+}
