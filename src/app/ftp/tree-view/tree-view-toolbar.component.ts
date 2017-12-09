@@ -9,13 +9,13 @@ import { AppFolder } from '../../models/app-folder.model';
 export class TreeViewToolbarComponent implements OnInit {
 
 	@Input() disableUpFolder = true;
-	@Output() onParentFolder = new EventEmitter();
+	@Output() parentFolder = new EventEmitter();
 
 	constructor() { }
 
 	ngOnInit() { }
 
 	goToParentFolder() {
-		this.onParentFolder.emit();
+		this.parentFolder.emit();
 	}
 }

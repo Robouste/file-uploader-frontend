@@ -1,6 +1,6 @@
-<app-tree-view-toolbar [disableUpFolder]="!hasParentFolder" (onParentFolder)="goToParentFolder()" ></app-tree-view-toolbar>
+<app-tree-view-toolbar [disableUpFolder]="!hasParentFolder" (parentFolder)="goToParentFolder()" ></app-tree-view-toolbar>
 <mat-list>
-	<h3 mat-subheader>{{ content.name }}</h3>
+	<h3 mat-subheader>{{ currentFolder.name }}</h3>
 	<mat-list-item *ngFor="let folder of currentFolder.subFolders" class="folder" (click)="openFolder(folder)" >
 		<mat-icon mat-list-icon class="file-type-icon">folder</mat-icon>
 		<h4 mat-line>{{ folder.name }}</h4>

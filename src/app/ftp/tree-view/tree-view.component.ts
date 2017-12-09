@@ -9,14 +9,12 @@ import { AppFolder } from '../../models/app-folder.model';
 
 export class TreeViewComponent implements OnInit {
 
-	@Input() content: AppFolder;
-	public currentFolder: AppFolder;
+	@Input('content') currentFolder: AppFolder;
 	public hasParentFolder = false;
 
 	constructor() { }
 
 	ngOnInit() {
-		this.currentFolder = { ...this.content };
 	}
 
 	openFolder(folder: AppFolder) {

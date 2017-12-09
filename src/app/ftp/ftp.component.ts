@@ -43,8 +43,6 @@ export class FtpComponent implements OnInit {
 		this.setParent(content);
 
 		this.ftp.content = content;
-
-		console.log(this.ftp.content);
 	}
 
 	setParent(folder: AppFolder) {
