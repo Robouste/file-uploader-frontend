@@ -3,7 +3,8 @@ import { AppFolder } from '../../models/app-folder.model';
 
 @Component({
 	selector: 'app-tree-view-toolbar',
-	templateUrl: 'tree-view-toolbar.component.html'
+	templateUrl: 'tree-view-toolbar.component.html',
+	styleUrls: ['./tree-view-toolbar.component.scss']
 })
 
 export class TreeViewToolbarComponent implements OnInit {

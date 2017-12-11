@@ -2,8 +2,28 @@
 @import "../../scss/colors";
 
 .folder, .file {
+
+	.mat-line {
+		display: flex;
+		flex-direction: row;
+	}
+
 	p {
 		color: #b7b7b7;
+	}
+
+	.row-actions {
+		margin-left: auto;
+		display: none;
+		.mat-button {
+			min-width: unset;
+		}
+	}
+
+	&:hover {
+		.row-actions {
+			display: block;
+		}
 	}
 }
 

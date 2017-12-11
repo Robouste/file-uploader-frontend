@@ -1,3 +1,5 @@
+import { FtpService } from './services/ftp.service';
+import { HttpClientModule } from '@angular/common/http';
 import { FtpModule } from './ftp/ftp.module';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from './shared/shared.module';
@@ -18,12 +20,14 @@ import { LayoutModule } from './layout/layout.module';
 		SharedModule,
 		ConnexionModule,
 		FtpModule,
-		LayoutModule
+		LayoutModule,
+		HttpClientModule
 	],
 	providers: [
 		{
 			provide: LocationStrategy, useClass: HashLocationStrategy
-		}
+		},
+		FtpService
 	],
 	bootstrap: [AppComponent]
 })

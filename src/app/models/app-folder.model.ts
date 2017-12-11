@@ -13,11 +13,17 @@ export class AppFolder {
 		return this.path + this.name;
 	}
 
-	constructor(name: string, folders: Array<AppFolder> = [], files: Array<AppFile> = [], parent: AppFolder = null) {
+	constructor(name: string, folders: Array<AppFolder> = [], files: Array<AppFile> = []) {
 		this.name = name;
 		this.subFolders = folders;
 		this.subFiles = files;
 		this.creationDate = new Date('1/1/16');
-		this.parent = parent;
+	}
+
+	setParent() {
+		this.subFolders.forEach(f => {
+			f.parent = this;
+			f.setParent();
+		});
 	}
 }

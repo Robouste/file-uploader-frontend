@@ -40,15 +40,10 @@ export class FtpComponent implements OnInit {
 			new AppFile("file2", "pdf", 7598)
 		];
 
-		this.setParent(content);
+		content.setParent();
 
 		this.ftp.content = content;
-	}
 
-	setParent(folder: AppFolder) {
-		folder.subFolders.forEach(f => {
-			f.parent = folder;
-			this.setParent(f);
-		});
+		console.log(this.ftp);
 	}
 }

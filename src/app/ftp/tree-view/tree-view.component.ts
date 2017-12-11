@@ -9,7 +9,7 @@ import { AppFolder } from '../../models/app-folder.model';
 
 export class TreeViewComponent implements OnInit {
 
-	@Input('content') currentFolder: AppFolder;
+	@Input() currentFolder: AppFolder;
 	public hasParentFolder = false;
 
 	constructor() { }
@@ -24,6 +24,10 @@ export class TreeViewComponent implements OnInit {
 
 	goToParentFolder() {
 		this.currentFolder = this.currentFolder.parent;
-		this.hasParentFolder = this.currentFolder.parent !== null;
+		this.hasParentFolder = this.currentFolder.parent != null;
+	}
+
+	test(clickEvent: MouseEvent) {
+		clickEvent.stopPropagation();
 	}
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FtpService } from '../services/ftp.service';
 
 @Component({
 	selector: 'app-connexion',
@@ -8,7 +9,14 @@ import { Component, OnInit } from '@angular/core';
 
 export class ConnexionComponent implements OnInit {
 
-	constructor() { }
+	public test: any;
 
-	ngOnInit() { }
+	constructor(private ftpService: FtpService) { }
+
+	ngOnInit() {
+		this.ftpService.getValues()
+			.subscribe(result => {
+				console.log(result);
+			});
+	}
 }
